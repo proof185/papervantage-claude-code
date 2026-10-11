@@ -1,0 +1,17 @@
+{
+  "name": "papervantage",
+  "description": "PaperVantage for Claude Code: set up a university project with a ranked reading list, your assignment brief and a ready-made project folder.",
+  "owner": {
+    "name": "PaperVantage"
+  },
+  "plugins": [
+    {
+      "name": "papervantage",
+      "source": "./plugins/papervantage",
+      "description": "Connects Claude Code to PaperVantage and adds /papervantage:new-project, which creates a PaperVantage project and a local project folder with skills and scoped permissions.",
+      "author": {
+        "name": "PaperVantage"
+      }
+    }
+  ]
+}

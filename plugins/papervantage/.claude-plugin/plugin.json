@@ -1,0 +1,8 @@
+{
+  "name": "papervantage",
+  "description": "Connects Claude Code to PaperVantage and adds /papervantage:new-project: a PaperVantage project, a ranked reading list from your assignment brief, and a local project folder with skills and scoped permissions.",
+  "version": "0.2.0",
+  "author": {
+    "name": "PaperVantage"
+  }
+}
