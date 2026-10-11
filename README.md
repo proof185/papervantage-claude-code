@@ -10,5 +10,14 @@ A Claude Code plugin marketplace with one plugin, `papervantage`.
 See `plugins/papervantage/README.md`. The plugin only provides the connection and a short command;
 the work is done by the PaperVantage MCP server.
 
-This directory is published as its own public repository from the PaperVantage monorepo
-(`distribution/claude-code/`); change it there.
+## Maintaining
+
+The monorepo's `distribution/claude-code/` is canonical; the public repo is a mirror. Publish with
+a subtree split (from the monorepo root), then push the result to the public repo's `main`:
+
+```bash
+git subtree split --prefix=distribution/claude-code -b claude-plugin-publish
+git push git@github.com:<owner>/<repo>.git claude-plugin-publish:main
+```
+
+Validate before publishing with `claude plugin validate ./distribution/claude-code`.

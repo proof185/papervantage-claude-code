@@ -22,5 +22,21 @@ Then run `/mcp`, pick `plugin:papervantage:papervantage` and sign in with your P
 
 ## Without the plugin
 
-Any MCP client can use the server at `https://mcp.papervantage.com/mcp`, and the same flow is the
-`new_project` prompt / `get_project_scaffold` tool. See the PaperVantage site's MCP page.
+Any MCP client can use the server at `https://mcp.papervantage.com/mcp`; the same flow is the
+`new_project` prompt and the `get_project_scaffold` tool.
+
+In Claude Code, register the server yourself (the sign-in callback is fixed at port 8090):
+
+```bash
+claude mcp add --transport http --callback-port 8090 papervantage https://mcp.papervantage.com/mcp
+```
+
+and, if you want a short command, copy `commands/new-project.md` to `~/.claude/commands/`. It
+works there too: it figures out the tool-name prefix (`papervantage` when registered this way)
+and passes it to the scaffold, so the generated permission entries match.
+
+## Sign-in
+
+The server uses OAuth. Run `/mcp`, pick the PaperVantage server and sign in. The plugin asks for
+callback port 8090 (the only localhost callback PaperVantage's sign-in allows); if sign-in fails
+with a redirect error, use the manual `claude mcp add ... --callback-port 8090` route above.

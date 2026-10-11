@@ -7,16 +7,18 @@ Set up a new academic project for me with PaperVantage.
 
 Arguments: $ARGUMENTS
 
-Use the PaperVantage MCP server (provided by this plugin). Follow its `new_project` prompt
-exactly if you can use it (title, level, field and deadline come from the arguments above; ask me
-for anything missing). If you can't use MCP prompts, do the same flow with the tools: call
-`create_project`, then `get_project_scaffold` with the new project's id, and follow its
-`instructions`.
+Use the PaperVantage MCP server. Work out the name its tools carry in this session: the part of a
+PaperVantage tool name between `mcp__` and `__<tool>`. Installed as this plugin it is
+`plugin_papervantage_papervantage`; registered by hand it is usually `papervantage`. Call that
+value `MCP_NAME`.
 
-When you call `get_project_scaffold`, set `mcp_server` to the name PaperVantage's tools carry in
-this session: it is the part of the tool name between `mcp__` and `__<tool>`. For this plugin
-that is `plugin_papervantage_papervantage`. The generated `.claude/settings.json` uses it in its
-permission entries, so a wrong value there means permission prompts for every PaperVantage tool.
+Then follow the server's `new_project` prompt if you can use it, passing `mcp_server=MCP_NAME`
+along with the title, level, field and deadline from the arguments above (ask me for anything
+missing). If you can't use MCP prompts, run the same flow with the tools: `create_project`, then
+`get_project_scaffold(project_id, mcp_server=MCP_NAME)`, and follow its `instructions`.
+
+`MCP_NAME` matters: the generated `.claude/settings.json` uses it in its permission entries, so a
+wrong value means a permission prompt for every PaperVantage tool.
 
 If the PaperVantage tools are not available, stop and tell me to run `/mcp` and sign in to the
-`papervantage` server, then try again.
+PaperVantage server, then try again.
