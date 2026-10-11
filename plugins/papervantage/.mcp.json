@@ -4,6 +4,7 @@
       "type": "http",
       "url": "https://mcp.papervantage.com/mcp",
       "oauth": {
+        "clientId": "3k2gorgaqb6d2sl89f175eersa",
         "callbackPort": 8090
       }
     }

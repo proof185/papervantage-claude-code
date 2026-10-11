@@ -28,7 +28,7 @@ Any MCP client can use the server at `https://mcp.papervantage.com/mcp`; the sam
 In Claude Code, register the server yourself (the sign-in callback is fixed at port 8090):
 
 ```bash
-claude mcp add --transport http --callback-port 8090 papervantage https://mcp.papervantage.com/mcp
+claude mcp add --transport http --callback-port 8090 --client-id 3k2gorgaqb6d2sl89f175eersa papervantage https://mcp.papervantage.com/mcp
 ```
 
 and, if you want a short command, copy `commands/new-project.md` to `~/.claude/commands/`. It
@@ -37,6 +37,8 @@ and passes it to the scaffold, so the generated permission entries match.
 
 ## Sign-in
 
-The server uses OAuth. Run `/mcp`, pick the PaperVantage server and sign in. The plugin asks for
-callback port 8090 (the only localhost callback PaperVantage's sign-in allows); if sign-in fails
-with a redirect error, use the manual `claude mcp add ... --callback-port 8090` route above.
+The server uses OAuth. Run `/mcp`, pick the PaperVantage server and sign in. The plugin supplies
+the same OAuth client id and callback port (8090, the only localhost callback PaperVantage's
+sign-in allows) that PaperVantage's own `claude mcp add` instructions use. If sign-in fails with
+a redirect or client error, use the manual route above, or copy the exact command from
+PaperVantage's MCP page, which includes `--client-id`.
