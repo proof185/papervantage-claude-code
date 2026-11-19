@@ -1,8 +1,14 @@
 {
   "name": "papervantage",
   "description": "Connects Claude Code to PaperVantage and adds /papervantage:new-project: a PaperVantage project, a ranked reading list from your assignment brief, and a local project folder with skills and scoped permissions.",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "author": {
-    "name": "PaperVantage"
-  }
+    "name": "PaperVantage",
+    "url": "https://papervantage.com"
+  },
+  "homepage": "https://papervantage.com/connect/mcp",
+  "repository": "https://github.com/proof185/papervantage-claude-code",
+  "license": "MIT",
+  "icon": "./.claude-plugin/icon.png",
+  "privacyPolicyUrl": "https://papervantage.com/privacy"
 }
