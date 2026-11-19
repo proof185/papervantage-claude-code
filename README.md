@@ -3,7 +3,7 @@
 A Claude Code plugin marketplace with one plugin, `papervantage`.
 
 ```
-/plugin marketplace add <owner>/<repo>
+/plugin marketplace add proof185/papervantage-claude-code
 /plugin install papervantage@papervantage
 ```
 
@@ -17,7 +17,7 @@ a subtree split (from the monorepo root), then push the result to the public rep
 
 ```bash
 git subtree split --prefix=distribution/claude-code -b claude-plugin-publish
-git push git@github.com:<owner>/<repo>.git claude-plugin-publish:main
+git push git@github.com:proof185/papervantage-claude-code.git claude-plugin-publish:main
 ```
 
 Validate before publishing with `claude plugin validate ./distribution/claude-code`.

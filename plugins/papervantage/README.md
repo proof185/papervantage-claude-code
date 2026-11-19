@@ -14,7 +14,7 @@ permissions.
 ## Install
 
 ```
-/plugin marketplace add <owner>/<repo>
+/plugin marketplace add proof185/papervantage-claude-code
 /plugin install papervantage@papervantage
 ```
 
