@@ -10,6 +10,12 @@ A Claude Code plugin marketplace with one plugin, `papervantage`.
 See `plugins/papervantage/README.md`. The plugin only provides the connection and a short command;
 the work is done by the PaperVantage MCP server.
 
+## Other clients
+
+The server is remote (`https://mcp.papervantage.com/mcp`, Streamable HTTP, OAuth or a Bearer API key), so any MCP
+client can use it without this plugin. Setup for Cline and other agents: [`llms-install.md`](llms-install.md); for
+Claude Desktop, Cursor, Windsurf, Codex and opencode: <https://papervantage.com/connect/mcp>.
+
 ## Maintaining
 
 The monorepo's `distribution/claude-code/` is canonical; the public repo is a mirror. Publish with
